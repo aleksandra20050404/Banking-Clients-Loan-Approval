@@ -22,7 +22,7 @@ Aleksandra Vislova
 | File | Description |
 |------|-------------|
 | `README.md` | Project overview, dashboard visuals, and findings |
-| `banking_clients_eda.ipynb` | PySpark EDA notebook — data loading, cleaning, feature engineering, correlation and bivariate analysis |
+| `notebooks/banking_clients_eda.ipynb` | PySpark EDA notebook — data loading, cleaning, feature engineering, correlation and bivariate analysis |
 | `PowerBI/banking_clients_dashboard.pbix` | Power BI Desktop file with 3-page interactive dashboard |
 | `PowerBI/banking_clients_dashboard.pdf` | PDF file for viewing dashboard |
 | `data/banking-clients.csv` | Core client records — demographics, income, loans, deposits |
@@ -73,7 +73,7 @@ This project analyses a multi-source banking dataset to identify the demographic
 
 ### Step 1 — Data Loading & Joining
 
-All four tables are loaded as Spark DataFrames and joined using left joins on `GenderId`, `BRId`, and `IAId` to produce a single enriched df.
+All 4 tables are loaded as Spark DataFrames and joined using left joins on `GenderId`, `BRId`, and `IAId` to produce a single enriched df.
 
 ```python
 df = df_clients \
@@ -84,11 +84,11 @@ df = df_clients \
 
 ### Step 2 — Exploratory Data Analysis
 
-Row count, schema validation, and descriptive statistics (`describe()`) are computed. Duplicate checking confirms data integrity before feature engineering begins.
+Duplicate and missing values check confirms data integrity before feature engineering begins.
 
-### Step 3 — Categorical Variables Analysis
+### Step 4 — Categorical Variables Analysis
 
-Ten categorical columns are profiled for distinct value counts and frequency distributions, including `Nationality`, `Occupation`, `Fee Structure`, `Gender`, `Loyalty Classification`, `RiskCategory`, `Amount of Credit Cards`, `Income` and `Properties Owned`.
+8 categorical columns are profiled for distinct value counts and frequency distributions, including `Nationality`, `Fee Structure`, `Gender`, `Loyalty Classification`, `Risk Weightning`, `Amount of Credit Cards`, `IncomeCategory` and `Properties Owned`.
 
 ![Categorical Variable Distributions](https://github.com/aleksandra20050404/Banking-Clients-Loan-Approval/blob/main/img/categorical_var_distributions.jpg)
 

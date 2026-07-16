@@ -261,7 +261,8 @@ Sums the `Saving Accounts` balance column across all clients in the current filt
 ```dax
 Foreign Currency Accounts = SUM('banking-clients'[Foreign Currency Account])
 ```
-Aggregates the `Foreign Currency Account` balance for all filtered clients. Shown as a KPI card ($44.63M) and as the third series on the Account Balances over Time line chart.
+
+- Aggregates the `Foreign Currency Account` balance for all filtered clients. Shown as a KPI card ($44.63M) and as the third series on the Account Balances over Time line chart.
 ---
 
 ```dax
